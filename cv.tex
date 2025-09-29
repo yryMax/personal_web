@@ -1,0 +1,222 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+\definecolor{gray70}{gray}{0.6} 
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{3pt}{4pt}{8pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]{
+  \begin{tabularx}{\linewidth}{@{}l X r@{}}
+  \textbf{#1} & \hfill & #2 \\[1pt]    % ← 同步改小
+  \end{tabularx}
+  \begin{minipage}[t]{\linewidth}
+  \begin{itemize}[leftmargin=1em, topsep=0pt, itemsep=1pt, parsep=0pt, partopsep=0pt, label=--]
+}{
+  \end{itemize}
+  \end{minipage}
+}
+
+\newcommand{\RoleAt}[2]{\textbf{#1}\,{\color{gray70}@}\,{\normalfont\itshape #2}}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge\bfseries Renyi Yang \\[7.5pt]
+
+\href{https://github.com/yryMax}{\raisebox{-0.05\height}\faGithub\ yryMax} \ $|$ \ 
+\href{https://www.linkedin.com/in/renyi-yang-139a02215/}{\raisebox{-0.05\height}\faLinkedin\ Renyi Yang} \ $|$ \ 
+\href{https://codeforces.com/profile/luluQAQ}{\raisebox{-0.05\height}\faGlobe \ luluQAQ} \ $|$ \ 
+\href{mailto:R.Yang-7@student.tudelft.nl}{\raisebox{-0.05\height}\faEnvelope \ R.Yang-7@student.tudelft.nl} \ $|$ \ 
+\href{tel:+310613937703}{\raisebox{-0.05\height}\faMobile \ +310613937703} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+\vspace{18pt}
+\section{Work Experience}
+
+
+\begin{joblong}{\RoleAt{AI Intern}{Alibaba International Digital Commerce Group}}{Jul. 2025 - Aug. 2025}
+\item Built a \textbf{17k+ hours} multilingual long speech corpus from multiple data sources; 
+  \item Designed \textbf{100k+ QA pairs} with multiple tasks(ASR, translation, summarization, etc);
+  \item Implemented chunked \& streaming inference for long speech in Qwen2Audio; 
+  \item Benchmarked performance on our model/data with other baselines; 
+\end{joblong}
+
+
+\begin{joblong}{\RoleAt{Software Developer}{Delft Mercurians}}{Nov. 2022 - Jul. 2024}
+            \item Designed an automaton to track game states and synchronize updates based on referee commands;
+            \item Contributed to the architecture of the world tracker and implemented a Kalman filter for real-time vision data processing.
+            \item Developed global player strategies to ensure rule-compliant autonomous decision-making on the field.
+\end{joblong}
+  
+%Projects
+
+
+\section{Research Projects}\vspace{-4pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Adversarial Attack Against Zero-Shot Voice Cloning(Interspeech'25 Workshop)} & \hfill \href{https://advspeech.sosadlulu.com/}{Poster} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a stealthy adversarial attack for zero-shot TTS that reliably forces models to produce incorrect yet intelligible content on arbitrary prompts. Benchmarked the method on three SOTA systems and achieved the best quality–effectiveness trade off versus strong baselines; Code available at:   \href{https://github.com/yrymax/AdvSpeech}{Code}. Audio demo at:  \href{https://yrymax.github.io/AdvSpeech/sample\_web/}{Audio}.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2024 - present & M.Sc. Computer Science @ \textbf{TUDelft} \hfill \normalsize (GPA: 8.13/10.0) \\
+
+2021 - 2024 & B.Sc. Computer Science and Engineering @ \textbf{TUDelft} \hfill (GPA: 8.7/10.0 with cum laude) \\ 
+
+2023 - 2024 & Exchange Student Computer Science @ \textbf{EPFL} \hfill   \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Teaching \& Service}
+\begin{jobshort}{\RoleAt{Volunteer}{ASPLOS \& EuroSys 2025}}{Apr. 2025}\end{jobshort}
+\begin{jobshort}{\RoleAt{Teaching Assistant}{TU Delft}}{2025 - present}\end{jobshort}
+\noindent Courses: \textit{ DSAIT4005 Machine and Deep Learning; CS4530 Modelling and Problem Solving
+}
+
+
+\section{Skills} \begin{tabularx}{\linewidth}{@{}l X@{}}Programming & \normalsize{JAVA(Spring boot,JavaFX);Python(pyTorch,Pandas,Django)} \\
+ & \normalsize{Functional Programming(Scala, Haskell); Formal Reasoning(Coq, Agda)}\\ Typesetting & \normalsize{Markdown; \textrm{\LaTeX}}\\    Languages & \normalsize{Mandarin(Native);English(Intermediate)}\\   \end{tabularx}
+
+\vfill
+
+\end{document}

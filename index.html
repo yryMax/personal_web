@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renyi Yang</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <div class="terminal-title">renyi@portfolio</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$ whoami</span>
+                        </div>
+                        <div class="output">
+                            <div class="name">Renyi Yang</div>
+                            <div class="role">
+                                Coding4Life; <span class="hidden-text">Even through it is worth nothing;</span>
+                            </div>
+                        </div>
+
+                        <div class="terminal-line">
+                            <span class="prompt">$ cat contact.txt</span>
+                        </div>
+                        <div class="output">
+                            <div class="contact-item">📧 R.Yang-7@student.tudelft.nl</div>
+                            <div class="contact-item"><i class="fab fa-discord"></i> lulu_qwqq</div>
+                        </div>
+
+                        <div class="terminal-line">
+                            <span class="prompt">$ ls social/</span>
+                        </div>
+                        <div class="output">
+                            <div class="social-links">
+                                <a href="https://github.com/yryMax" class="social-link">
+                                    <i class="fab fa-github"></i> yryMax
+                                </a>
+                                <a href="https://www.linkedin.com/in/renyi-yang-139a02215/" class="social-link">
+                                    <i class="fab fa-linkedin"></i> renyi-yang
+                                </a>
+                                <a href="https://codeforces.com/profile/luluQAQ" class="social-link">
+                                    <i class="fas fa-code"></i> luluQAQ
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="terminal-line">
+                            <span class="prompt">$ cat skills.md</span>
+                        </div>
+                        <div class="output" id="skills-output">
+                            <div class="skill-item">Software Development OK: (Java > Python >> Web)</div>
+                            <div class="skill-item">AI hater but OK: (Pytorch, <a href="https://huggingface.co/docs/diffusers/index" target="_blank">Diffusers</a>, <a href="https://huggingface.co/docs/transformers/index" target="_blank">Transformers</a>)</div>
+                            <div class="skill-item">Functional Programming OK: (Haskell > Scala)</div>
+                            <div class="skill-item"></div>
+                            <div class="skill-item">Formal Reasoning Learning🥰: (Coq, Agda, Lean4)</div>
+                        </div>
+
+                        <div class="terminal-line">
+                            <span class="prompt">$ █</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+            <section class="section">
+                <h2>Education</h2>
+                <div class="one-line"><span class="degree">M.Sc. Computer Science</span> <span class="at-symbol">@</span> <span class="school"><span class="country">NL</span> TU Delft</span></div>
+                <div class="one-line"><span class="honor">[cum laude]</span> <span class="degree">B.Sc. CS & Engineering</span> <span class="at-symbol">@</span> <span class="school"><span class="country">NL</span> TU Delft</span></div>
+                <div class="one-line"><span class="degree">Exchange Student</span> <span class="at-symbol">@</span> <span class="school"><span class="country">CH</span> EPFL</span></div>
+            </section>
+
+            <section class="section">
+                <h2>Work Experience</h2>
+                <div class="exp-item">
+                    <div class="one-line"><span class="position">AI Intern</span> <span class="at-symbol">@</span> <span class="company">Alibaba International Digital Commerce Group</span></div>
+                    <div class="one-line description-text"><span class="highlight-number">17k+</span> hours multilingual speech corpus from diverse sources</div>
+                    <div class="one-line description-text"><span class="highlight-number">100k+</span> QA pairs with multiple tasks (summarization, ASR, translation, etc.)</div>
+                </div>
+                <div class="exp-item">
+                    <div class="one-line"><span class="position">Software Developer</span> <span class="at-symbol">@</span> <span class="company">Delft Mercurians</span></div>
+                    <div class="one-line description-text">Served 2 years developing autonomous soccer robots. Built game state tracking automaton and implemented Kalman filters for vision processing with real-time decision-making strategies.</div>
+                    <div class="links">
+                        <a href="https://delftmercurians.nl/" target="_blank">Website</a>
+                        <a href="https://github.com/DelftMercurians/" target="_blank">Code</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Research Projects</h2>
+                <div class="research-item">
+                    <div class="one-line"><strong>Adversarial Attack Against Zero-Shot Voice Cloning</strong> • Interspeech'25 Workshop</div>
+                    <div class="one-line description-text">Stealthy adversarial attack for zero-shot TTS systems with optimal quality-effectiveness trade-off</div>
+                    <div class="links">
+                        <a href="https://advspeech.sosadlulu.com/">Poster</a>
+                        <a href="https://github.com/yrymax/AdvSpeech">Code</a>
+                        <a href="https://yrymax.github.io/AdvSpeech/sample_web/">Demo</a>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <div class="one-line"><strong>My Papers</strong></div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2410.10178">Bachelor Thesis</a>
+                        <a href="https://arxiv.org/abs/2506.06018">Another paper I assisted</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Misc</h2>
+                <div class="one-line"><span class="position">Teaching Assistant</span> <span class="at-symbol">@</span> <span class="company"><span class="country">NL</span> TU Delft</span></div>
+                <div class="one-line description-text">DSAIT4005 Machine and Deep Learning; CS4530 Modelling and Problem Solving</div>
+                <div class="one-line"><span class="position">Volunteer</span> <span class="at-symbol">@</span> <span class="company">ASPLOS & EuroSys '25</span></div>
+            </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Friend Links Sector -->
+    <div class="friend-links-container" id="friendLinksContainer">
+        <div class="corner-fold" id="cornerFold">
+            <div class="fold-icon">🌟</div>
+            <div class="friend-info" id="friendInfo">
+                <div class="friend-name">
+                    <a href="https://tools.lthero.cn/resume/" target="_blank" class="friend-link">My Goat <span class="at-symbol">@</span> LtHero</a>
+                </div>
+                <div class="friend-quote">哥哥下雨我就不打伞</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
